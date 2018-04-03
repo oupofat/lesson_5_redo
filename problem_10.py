@@ -26,6 +26,6 @@ for letter in user:
         if letter != ":" and letter != "]":
             code_color += letter
         else:
-            sentence += sentence
-        
+            sentence += letter
+            state = "open"
 print(sentence)
