@@ -16,10 +16,16 @@ for letter in user:
             sentence += letter
     elif state == "colon":
         if  letter == ":":
-            state = "open"
+            state = "open_colon"
             color_word += "\033[0m"
         elif ":" not in letter:
             color_word += letter
         else:
             sentence += letter
+    elif state == "open_colon":
+        if letter != ":" and letter != "]":
+            code_color += letter
+        else:
+            sentence += sentence
+        
 print(sentence)
